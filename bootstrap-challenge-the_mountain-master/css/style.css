@@ -1,0 +1,186 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  
+
+}
+
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background: #1e1e1eAA;
+  transition: all .5s ease;
+
+}
+.sidebar header{
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+  text-decoration: none;
+}
+
+.sidebar a span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding:auto ;
+  color: white;
+  transition: all .5s ease;
+}
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 6px;
+}
+a.active,a:hover{
+  color: #b93632;
+  border-left: 5px solid #b93632;
+}
+.sidebar a:hover span{
+  margin-left: 5px;
+  color: #b93632;
+}
+.sidebar a.active span{
+  margin-left: 5px;
+  color: #b93632;
+}
+#check{
+  display: none;
+}
+
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #262626;
+  margin: 15px 30px;
+  font-size: 29px;
+  background:transparent;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+  right: 60px;
+  
+}
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#check:checked .header-section {
+  margin-left: 250px;
+  width: 80%;
+}
+
+.header-section{
+    background:url(/images/bg_header.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100ch;
+    transition: all .5s;
+  }
+    
+
+
+
+/* ---------------------------- Section nuage ------------------------*/
+
+
+#cloud {
+  background-image: url('../images/bg_nuage.jpg');
+  background-size: cover;
+}
+
+.blue{
+  width: 40%;
+  margin-left: 400px;
+  background-color: rgba(128, 215, 247, 0.660);
+}
+
+
+
+
+/* -------------------------------Media Query ---------------------- */
+
+
+@media(max-width : 860px){
+  .sidebar{
+    height: 100%;
+    width: 70px;
+    left: 0;
+    margin:0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+ 
+}
+@media(max-width : 768px){
+
+  .blue{
+    width: 80%;
+    margin-left: 0;
+  }
+  
+}
